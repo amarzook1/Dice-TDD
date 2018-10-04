@@ -10,9 +10,9 @@ end
 =begin
 test to return a number
 describe Dice do
-  it "when dice roll it gives the number 1" do
-    expect(subject.roll).to eq(1)
-  end
+it "when dice roll it gives the number 1" do
+expect(subject.roll).to eq(1)
+end
 end
 =end
 #Test to return a random number between 1 and 6
@@ -21,10 +21,12 @@ describe Dice do
   it "Gives a random number between 1 and 6 when roll" do
     expect(subject.roll).to be_between(1, 6)
   end
-  
-  it "Allows to roll any number of dices" do
-    expect(subject.number_of_dices(3)).to eq (3)
+  it 'Number of dices' do
+    subject.number_of_dices(4)
+    expect(subject.output.count).to eq 4
   end
-  
-  it 'it rolls given number of dices'
+  it 'outputs score of dices' do
+    subject.number_of_dices(3)
+    expect(subject).to respond_to(:output)
+  end
 end
