@@ -5,8 +5,6 @@ describe Dice do
   it "responds to roll" do
     expect(subject).to respond_to(:roll)
   end
-end
-
 =begin
 test to return a number
 describe Dice do
@@ -16,12 +14,10 @@ end
 end
 =end
 #Test to return a random number between 1 and 6
-
-describe Dice do
   it "Gives a random number between 1 and 6 when roll" do
     expect(subject.roll).to be_between(1, 6)
   end
-  it 'Number of dices' do
+  it 'responds to Number of dices' do
     subject.number_of_dices(4)
     expect(subject.output.count).to eq 4
   end
